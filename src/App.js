@@ -1,25 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import router
+import { 
+  BrowserRouter as Router,
+  Route,
+  Switch
+ } from "react-router-dom";
+ // import components
+ import MyNavbar from './components/Navbar';
+//  import pages
+import Register from './pages/Register';
+import Calculator from './pages/CalculatorBMI';
+import TextTrasform from './pages/TextTransform';
+import Todos from './pages/Todos';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <MyNavbar/>
+
+      <Switch>
+        <Route path='/Register'>
+          <Register/>
+        </Route>
+        <Route path='/Calculator'>
+          <Calculator/>
+        </Route>
+        <Route path='/TextTransform'>
+          <TextTrasform/>
+        </Route>
+        <Route path='/Todos'>
+          <Todos/>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
