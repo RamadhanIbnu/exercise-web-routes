@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 // import date picker
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 // import bootstrap
 import { Form,Button,Container,Card,Row,Col } from "react-bootstrap";
