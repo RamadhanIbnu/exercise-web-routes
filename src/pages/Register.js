@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import swal from '@sweetalert/with-react'
 // import date picker
 // import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -12,19 +13,48 @@ import "../style/Register.css"
 
 const Register = () =>{
     // const [startDate, setStartDate] = useState();
+    // console.log(startDate)
     const [dataName, setDataName] = useState("");
     const [dataEmail, setDataEmail] = useState("");
     const [dataPassword, setDataPassword] = useState("");
     const [dataAddress, setDataAddress] = useState("");
-    const [dataBirthDate, setDataBirthDate] = useState("");
+    const [dataBirthDate, setDataBirthDate] = useState();
     
+
+    const checkBox = [
+      {
+        type:"checkbox",
+        label:"Coding",
+        name:"formHorizontalCheckbox",
+        id:"formHorizontalCheckbox1",
+      },
+      {
+        type:"checkbox",
+        label:"Design",
+        name:"formHorizontalCheckbox",
+        id:"formHorizontalCheckbox2",
+      },
+      {
+        type:"checkbox",
+        label:"Gaming",
+        name:"formHorizontalCheckbox",
+        id:"formHorizontalCheckbox3",
+      }
+  ]
     // const handleChange = (event)=>{
     //     setDataName(event.target.value);
     // }
 
     const handleSubmit = (event)=>{
-        alert(
-                `Nama = ${dataName} \nEmail = ${dataEmail} \nPassword = ${dataPassword} \nAddress = ${dataAddress} \nDateBirth = ${dataBirthDate}` 
+        swal(
+                <div>
+                  <h1>Data anda :</h1>
+                  <p>Name : {dataName}</p>
+                  <p>Email: {dataEmail}</p>
+                  <p>Password: {dataPassword}</p>
+                  <p>Address: {dataAddress}</p>
+                  <p>Birth Date: {dataBirthDate}</p>
+                </div> 
             )
         event.preventDefault();
     }
@@ -62,9 +92,10 @@ const Register = () =>{
             <Form.Group controlId="formPickDate">
               <Form.Label>Birth Date</Form.Label>
               {/* <div className="date">
-                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                <DatePicker selected={startDate} onChange={(date) => setStartDate(date) }  />
+                
               </div> */}
-              <Form.Control type="text" placeholder="Birth Date" value={dataBirthDate} onChange={event => setDataBirthDate(event.target.value)} />
+              <Form.Control type="date" placeholder="Birth Date" value={dataBirthDate} onChange={event => setDataBirthDate(event.target.value)} />
             </Form.Group>
 
             <fieldset>
@@ -95,24 +126,22 @@ const Register = () =>{
                   Skill
                 </Form.Label>
                 <Col sm={10}>
-                  <Form.Check
+                  {/* <Form.Check
                     type="checkbox"
                     label="Coding"
                     name="formHorizontalCheckbox"
                     id="formHorizontalCheckbox1"
-                  />
-                  <Form.Check
-                    type="checkbox"
-                    label="Design"
-                    name="formHorizontalCheckbox"
-                    id="formHorizontalCheckbox2"
-                  />
-                  <Form.Check
-                    type="checkbox"
-                    label="Gaming"
-                    name="formHorizontalCheckbox"
-                    id="formHorizontalCheckbox3"
-                  />
+                  /> */}
+                  {checkBox.map((item, index) =>(
+                    <div key={index}>
+                      <Form.Check
+                        type={item.type}
+                        label={item.label}
+                        name={item.name}
+                        id={item.id}
+                      />
+                    </div>
+                  ))}
                 </Col>
               </Form.Group>
             </fieldset>
