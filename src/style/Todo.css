@@ -1,0 +1,43 @@
+.container{
+    margin-top: 100px;
+}
+
+.control{
+    width: 40%;
+    margin: auto;
+}
+
+.btn{
+    margin-top: 10px;
+}
+
+.button-label{
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 30%;
+}
+
+.container-todo-app{
+    text-align: center;
+    position: relative;
+}
+
+.list{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.todo{
+    display: flex;
+    justify-content: center;
+}
+
+.alert{
+    width: 50%;
+    margin-top: 20px;
+    padding: .375rem .75rem;
+    /* position: absolute;
+    left: 20%; */
+}
