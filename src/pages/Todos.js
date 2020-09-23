@@ -4,11 +4,7 @@ import { Container, Card, Form, Button, Alert } from "react-bootstrap";
 
 const Todos = () =>{
     const [inputText, setInputText] = useState("");
-    const [todos, setTodos] = useState([ 
-        // {id:1, todo: "membuat todos"},
-        // {id:2, todo: "belajar state"},
-        // {id:3, todo: "tes todos"},
-        // {id:4, todo: "belajar react"}, 
+    const [todos, setTodos] = useState([  
     ])
 
   // Menangani perubahan pada text input
