@@ -20,14 +20,13 @@ const MyNavbar = () =>{
               <Nav.Link>Calculator BMI</Nav.Link>            
             </LinkContainer>
             
-            <LinkContainer to="TextTransform">
+            <LinkContainer to="/TextTransform">
               <Nav.Link>Text Transform</Nav.Link>            
             </LinkContainer>
             
             <LinkContainer to="/Todos">
               <Nav.Link>Todos</Nav.Link>            
             </LinkContainer>
-            
           </Nav>
         </Navbar.Collapse>
       </Navbar>
