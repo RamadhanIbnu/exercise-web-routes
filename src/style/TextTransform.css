@@ -1,0 +1,16 @@
+.header-output{
+    text-align: center;
+}
+
+.container-output{
+    display: flex;
+    flex-direction: column;
+}
+
+.output-text{
+    margin: auto;
+}
+
+.header-input{
+    text-align: center;
+}
